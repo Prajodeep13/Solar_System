@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+  <link rel="stylesheet" crossorigin href="/assets/index-KN5AbkHh.css">
+</head>
+<body>
+    <div id="container">
+        <canvas id="canvas"></canvas>
+        <div id="controls">
+            <div id="controls-toggle">▼ Controls</div>
+            <button id="pause-btn">⏸</button>
+            <div>
+                <label>Global Speed: <span id="global-speed-value">1.0</span></label>
+                <input type="range" id="global-speed" min="0" max="2" step="0.1" value="1">
+            </div>
+            <div id="planet-controls"></div>
+        </div>
+    </div>
+
+    <!-- Load Three.js and OrbitControls -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    
+    <!-- Your script -->
+    <script src="main.js"></script>
+</body>
+</html>
