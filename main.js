@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create celestial bodies
     const celestialBodies = {};
     
-    // Sun - now with proper 3D appearance
+    // Sun 
     const sunGeometry = new THREE.SphereGeometry(5, 32, 32);
     const sunMaterial = new THREE.MeshPhongMaterial({
         color: 0xffff00,
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     celestialBodies.sun = sun;
     sunLight.position.copy(sun.position);
     
-    // Add subtle sun glow effect
+    // sun glow effect
     const sunGlowGeometry = new THREE.SphereGeometry(5.5, 32, 32);
     const sunGlowMaterial = new THREE.MeshBasicMaterial({
         color: 0xffff00,
@@ -79,14 +79,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const sunGlow = new THREE.Mesh(sunGlowGeometry, sunGlowMaterial);
     sun.add(sunGlow);
     
-    // Add Sun label
+    // Sun label
     const sunLabel = document.createElement('div');
     sunLabel.className = 'planet-label';
     sunLabel.textContent = "Sun";
     sunLabel.id = 'label-sun';
     document.getElementById('container').appendChild(sunLabel);
     
-    // Store Sun data
+    // Sun data
     sun.userData = {
         name: "Sun",
         distance: 0,
@@ -332,8 +332,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         
-        // Always show Sun label (but only if not hovering another planet)
-        if (!hoveredPlanet || hoveredPlanet === 'sun') {
+        // Always show Sun label 
+       /* if (!hoveredPlanet || hoveredPlanet === 'sun') {
             const sunVector = new THREE.Vector3();
             sunVector.setFromMatrixPosition(sun.matrixWorld);
             sunVector.project(camera);
@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
             sunLabel.style.top = `${sunY}px`;
             sunLabel.style.display = 'block';
         }
-        
+        */
         renderer.render(scene, camera);
     }
     
